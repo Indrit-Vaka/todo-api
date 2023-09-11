@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace todo_api;
 
-public static class todo_api
+public static class TodoApi
 {
    
     private static List<Todo> _items = new();
@@ -75,7 +75,7 @@ public static class todo_api
     }
 
     [FunctionName("DeleteTodoById")]
-    public static async Task<IActionResult> DeleteTodoById(
+    public static IActionResult DeleteTodoById(
         [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "todo/{id}")]
         HttpRequest req, ILogger log, string id)
     {
